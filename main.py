@@ -1,6 +1,7 @@
 import pygame
 from pygame import *
 from player import *
+from buttons import *
 
 
 WIN_WIDTH = 800
@@ -19,7 +20,9 @@ def main():
     finished = False
 
     hero = Player(55, 800)  # создаем героя по (x,y) координатам
-    left = right = up = down = False# по умолчанию - стоим
+    left = right = up = down = False  # по умолчанию - стоим
+
+    btn1 = Button(200, 200, 100, 100)
 
     while not finished:
 
@@ -48,7 +51,10 @@ def main():
                 raise SystemExit("QUIT")
         screen.blit(bg, (0, 0))
 
-        hero.update(left, right, up, down)  # передвижение
+        hero.update(left, right, up, down, screen)  # передвижение
+        btn1.checkMePressed(hero)
+
+        btn1.draw(screen)
         hero.draw(screen)
 
         pygame.display.update()
