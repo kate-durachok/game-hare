@@ -20,9 +20,9 @@ def main():
 
     finished = False
 
-    hero = Player(55, 800, [0, WIN_WIDTH, 500, WIN_HEIGHT])  # создаем героя по (x,y) координатам
+    hero = Player(55, 800, [0, WIN_WIDTH, 500, WIN_HEIGHT], 80, 60, 3, 0)  # создаем героя по (x,y) координатам
     left = right = up = down = False  # по умолчанию - стоим
-    hero2 = Player(300, 300,[0, WIN_WIDTH, 0, 500])
+    hero2 = Player(300, 300, [0, WIN_WIDTH, 0, 500], 60, 40, 2, 1)
 
     btn1 = Button(['buttonc/bc0.png', 'buttonc/bc1.png'], 100, 500, 0)
     btn2 = Button(['buttons/bl0.png', 'buttons/bl1.png'], 400, 700, 1)
