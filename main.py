@@ -22,9 +22,9 @@ def main():
 
     hero = Player(55, 800, [0, WIN_WIDTH, 500, WIN_HEIGHT], 80, 60, 3, 0)  # создаем героя по (x,y) координатам
     left = right = up = down = False  # по умолчанию - стоим
-    hero2 = Player(300, 300, [0, WIN_WIDTH, 0, 500], 60, 40, 2, 1)
+    hero2 = Player(300, 300, [200, 600, 200, 500], 60, 40, 2, 1)
 
-    btn1 = Button(['buttonc/bc0.png', 'buttonc/bc1.png'], 100, 500, 0)
+    btn1 = Button(['buttonc/bc0.png', 'buttonc/bc1.png'], 100, 520, 0)
     btn2 = Button(['buttons/bl0.png', 'buttons/bl1.png'], 400, 700, 1)
     btn3 = Button(['buttons/br0.png', 'buttons/br1.png'], 560, 700, 1)
     btn4 = Button(['buttons/bu0.png', 'buttons/bu1.png'], 480, 620, 1)
