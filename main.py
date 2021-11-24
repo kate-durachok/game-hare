@@ -1,13 +1,14 @@
 import pygame
-from pygame import *
 from player import *
 from buttons import *
+from background import *
 
 
 WIN_WIDTH = 800
 WIN_HEIGHT = 900
 DISPLAY = (WIN_WIDTH, WIN_HEIGHT)
 BACKGROUND_COLOR = "#90EE90"
+BackGround = Background('bg.png', [0,0])
 
 
 def main():
@@ -16,13 +17,14 @@ def main():
     pygame.display.set_caption("Hare")
 
     bg = Surface((WIN_WIDTH, WIN_HEIGHT))
-    bg.fill(Color(BACKGROUND_COLOR))
+    bg.blit(BackGround.image, BackGround.rect)
+
     finished = False
 
     hero = Player(55, 800)  # создаем героя по (x,y) координатам
     left = right = up = down = False  # по умолчанию - стоим
 
-    btn1 = Button(200, 200, 100, 100)
+    btn1 = Button(200, 200, 70, 70)
 
     while not finished:
 
