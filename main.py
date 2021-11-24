@@ -24,7 +24,7 @@ def main():
     hero = Player(55, 800)  # создаем героя по (x,y) координатам
     left = right = up = down = False  # по умолчанию - стоим
 
-    btn1 = Button(200, 200, 70, 70)
+    btn1 = Button(['buttonc/bc0.png', 'buttonc/bc1.png'], 200, 200, 70, 70)
 
     while not finished:
 

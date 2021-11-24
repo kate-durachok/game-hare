@@ -6,14 +6,16 @@ BUTTON_PRESSED_COLOR = "red"
 BUTTON_TYPES = ["UP", "DOWN", "LEFT", "RIGHT", "CARROT"]
 
 class Button(sprite.Sprite):
-    def __init__(self, x, y, width=32, height=32, bType=""):
+    def __init__(self, image_files, x, y, width=32, height=32, bType=""):
         sprite.Sprite.__init__(self)
         self.x = x
         self.y = y
         self.state = 0
-        self.image = Surface((width, height))
-        self.image.fill(Color(BUTTON_COLOR))
-        self.rect = Rect(x, y, width, height)
+        self.image_files = image_files
+        self.image = image.load(image_files[0])
+        self.rect = self.image.get_rect()
+        self.rect.left = x
+        self.rect.top = y
         self.type = bType
 
     def checkMePressed(self, hero):
@@ -23,10 +25,10 @@ class Button(sprite.Sprite):
         if ((-hero.rect.height / 3 <= hit_box_y - self.y <= self.rect.height) and
             (-3 * hero.rect.width / 4 <= hit_box_x - self.x <= self.rect.width)):
             self.state = 1
-            self.image.fill(Color(BUTTON_PRESSED_COLOR))
+            self.image = image.load(self.image_files[1])
         else:
             self.state = 0
-            self.image.fill(Color(BUTTON_COLOR))
+            self.image = image.load(self.image_files[0])
 
         if self.type == BUTTON_TYPES[0]:
             pass
