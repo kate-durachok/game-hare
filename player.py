@@ -26,7 +26,7 @@ ANIMATION_STAY = [(('hare/hd1.png'), ANIMATION_DELAY)]
 
 
 class Player(sprite.Sprite):
-    def __init__(self, x, y, width=80, height=60, speed=3):
+    def __init__(self, x, y, borders, width=80, height=60, speed=3,):
         sprite.Sprite.__init__(self)
         self.speed = speed
         self.vx = 0
@@ -36,6 +36,7 @@ class Player(sprite.Sprite):
         self.image = Surface((width, height))
         self.image.fill(Color(COLOR))
         self.rect = Rect(x, y, width, height)  # прямоугольный объект
+        self.borders = borders
         self.image.set_colorkey(Color(COLOR))  # делаем фон прозрачным
         #        Анимация движения вправо
         boltAnim = []
@@ -104,17 +105,17 @@ class Player(sprite.Sprite):
         self.rect.x += self.vx
         self.rect.y += self.vy
 
-        if self.rect.x + self.rect.width >= screen.get_width():
-            self.rect.x = screen.get_width() - self.rect.width
+        if self.rect.x + self.rect.width >= self.borders[1]:
+            self.rect.x = self.borders[1] - self.rect.width
 
-        if self.rect.x <= 0:
-            self.rect.x = 0
+        if self.rect.x <= self.borders[0]:
+            self.rect.x = self.borders[0]
 
-        if self.rect.y + self.rect.height >= screen.get_height():
-            self.rect.y = screen.get_height() - self.rect.height
+        if self.rect.y + self.rect.height >= self.borders[3]:
+            self.rect.y = self.borders[3] - self.rect.height
 
-        if self.rect.y <= 0:
-            self.rect.y = 0
+        if self.rect.y <= self.borders[2]:
+            self.rect.y = self.borders[2]
 
     def draw(self, screen):  # Выводим себя на экран
         screen.blit(self.image, (self.rect.x, self.rect.y))
