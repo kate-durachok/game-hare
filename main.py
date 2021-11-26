@@ -9,6 +9,11 @@ DISPLAY = (WIN_WIDTH, WIN_HEIGHT)
 BACKGROUND_COLOR = "#90EE90"
 BackGround = Background('bg.png', [0, 0])
 
+pygame.mixer.init()
+pygame.mixer.music.load('music/game_s.mp3')
+pygame.mixer.music.set_volume(0.1)
+pygame.mixer.music.play(-1, 0)
+
 
 def main():
     pygame.init()

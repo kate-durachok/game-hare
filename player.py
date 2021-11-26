@@ -1,10 +1,9 @@
 from pygame import *
 import pyganim
-import os
+from os import path
 
 COLOR = "#696969"
 ANIMATION_DELAY = 60  # скорость смены кадров
-ICON_DIR = os.path.dirname(__file__)  # Полный путь к каталогу с файлами
 
 ANIMATION_RIGHT = [[('hare/hr1.png'),
                    ('hare/hr2.png'),
@@ -50,6 +49,7 @@ ANIMATION_STAY = [(('hare/hd1.png'), ANIMATION_DELAY),
                   (('hare/1/hd10.png'), ANIMATION_DELAY),
                   (('hare/2/hd20.png'), ANIMATION_DELAY)]
 
+
 class Player(sprite.Sprite):
     def __init__(self, x, y, borders, width=80, height=60, speed=3, number=0):
         sprite.Sprite.__init__(self)
@@ -68,21 +68,23 @@ class Player(sprite.Sprite):
         boltAnim = []
         for anim in ANIMATION_RIGHT[self.number]:
             boltAnim.append((anim, ANIMATION_DELAY))
-        #print(boltAnim)
         self.boltAnimRight = pyganim.PygAnimation(boltAnim)
         self.boltAnimRight.play()
+
         #        Анимация движения влево
         boltAnim = []
         for anim in ANIMATION_LEFT[self.number]:
             boltAnim.append((anim, ANIMATION_DELAY))
         self.boltAnimLeft = pyganim.PygAnimation(boltAnim)
         self.boltAnimLeft.play()
+
         #        Анимация движения вверх
         boltAnim = []
         for anim in ANIMATION_UP[self.number]:
             boltAnim.append((anim, ANIMATION_DELAY))
         self.boltAnimUp = pyganim.PygAnimation(boltAnim)
         self.boltAnimUp.play()
+
         #        Анимация движения вниз
         boltAnim = []
         for anim in ANIMATION_DOWN[self.number]:
@@ -93,6 +95,8 @@ class Player(sprite.Sprite):
         self.boltAnimStay = pyganim.PygAnimation([ANIMATION_STAY[self.number]])
         self.boltAnimStay.play()
         self.boltAnimStay.blit(self.image, (0, 0))  # По-умолчанию, стоим
+
+        #self.grass_sound = mixer.Sound(path.join('music/grass.wav'))
 
     def update(self, left, right, up, down, screen):
         if left:
