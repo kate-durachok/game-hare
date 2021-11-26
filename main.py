@@ -28,12 +28,9 @@ def main():
     hero = Player(800, 800, [0, WIN_WIDTH, 500, WIN_HEIGHT], 80, 60, 3, 0)  # создаем героя по (x,y) координатам
     left = right = up = down = False  # по умолчанию - стоим
     hero1 = Player(530, 450, [200, 600, 200, 500], 60, 40, 2, 1)
-    left1 = right1 = up1 = down1 = False  # по умолчанию - стоим
     hero2 = Player(350, 100, [275, 525, 0, 200], 40, 30, 1, 2)
-    left2 = right2 = up2 = down2 = False  # по умолчанию - стоим
 
-
-    btn1 = Button(['buttonc/bc0.png', 'buttonc/bc1.png'], 100, 520, 0)
+    btn1 = Button(['buttonc/bc0.png', 'buttonc/bc1.png'], 20, 520, 0)
 
     btn2 = Button(['buttons/bl0.png', 'buttons/bl1.png'], 400, 700, 1)
     btn3 = Button(['buttons/br0.png', 'buttons/br1.png'], 560, 700, 1)
@@ -42,10 +39,12 @@ def main():
 
     btn11 = Button(['buttonc/bc10.png', 'buttonc/bc11.png'], 220, 220, 0)
 
-    btn12 = Button(['buttons/1/bl10.png', 'buttons/1/bl11.png'], 380, 410, 1)
-    btn13 = Button(['buttons/1/br10.png', 'buttons/1/br11.png'], 500, 410, 1)
-    btn14 = Button(['buttons/1/bu10.png', 'buttons/1/bu11.png'], 440, 350, 1)
-    btn15 = Button(['buttons/1/bd10.png', 'buttons/1/bd11.png'], 440, 410, 1)
+    btn12 = Button(['buttons/1/bl10.png', 'buttons/1/bl11.png'], 370, 410, 1)
+    btn13 = Button(['buttons/1/br10.png', 'buttons/1/br11.png'], 490, 410, 1)
+    btn14 = Button(['buttons/1/bu10.png', 'buttons/1/bu11.png'], 430, 350, 1)
+    btn15 = Button(['buttons/1/bd10.png', 'buttons/1/bd11.png'], 430, 410, 1)
+
+    btn22 = Button(['buttonc/bc20.png', 'buttonc/bc21.png'], 290, 20, 0)
 
     while not finished:
 
@@ -123,6 +122,7 @@ def main():
             btn14.draw(screen)
             btn15.draw(screen)
 
+            btn22.draw(screen)
             hero2.draw(screen)
 
 
@@ -158,6 +158,7 @@ def main():
 
         hero2.update(left2, right2, up2, down2, screen)
 
+        btn22.checkMePressed(hero2)
 
         hero.draw(screen)
 
