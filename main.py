@@ -24,7 +24,7 @@ def main():
     left = right = up = down = False  # по умолчанию - стоим
     hero1 = Player(530, 450, [200, 600, 200, 500], 60, 40, 2, 1)
     left1 = right1 = up1 = down1 = False  # по умолчанию - стоим
-    hero2 = Player(350, 100, [275, 525, 0, 200], 60, 40, 1, 1)
+    hero2 = Player(350, 100, [275, 525, 0, 200], 40, 30, 1, 2)
     left2 = right2 = up2 = down2 = False  # по умолчанию - стоим
 
 
