@@ -13,6 +13,7 @@ def main():
 
     menu_loop(screen, bg)
     game_loop(screen, bg)
+    menu_loop(screen, bg)
 
 
 

@@ -9,6 +9,11 @@ def game_loop(screen, bg):
     left = right = up = down = False
     finished = False
 
+    pygame.mixer.init()
+    pygame.mixer.music.load('music/game_s.mp3')
+    pygame.mixer.music.set_volume(0.05)
+    pygame.mixer.music.play(-1, 0)
+
     while not finished:
 
         for e in pygame.event.get():
@@ -122,6 +127,9 @@ def game_loop(screen, bg):
         hero2.update(left2, right2, up2, down2, screen)
 
         btn22.checkMePressed(hero2)
+
+        if btn22.state == 1:
+            finished = True
 
         hero.draw(screen)
 

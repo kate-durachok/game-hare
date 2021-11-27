@@ -35,6 +35,17 @@ class Button(sprite.Sprite):
             self.image = image.load(self.image_files[0])
             return 0
 
+    def Press(self):
+        x, y = mouse.get_pos()
+        if (self.x <= x <= self.x + self.rect.width) and (self.y <= y <= self.y + self.rect.height):
+            if mouse.get_pressed(3)[0]:
+                self.image = image.load(self.image_files[2])
+                self.state = 1
+            else:
+                self.image = image.load(self.image_files[1])
+        else:
+            self.state = 0
+            self.image = image.load(self.image_files[0])
 
     def draw(self, screen):  # Выводим себя на экран
         screen.blit(self.image, (self.rect.x, self.rect.y))
