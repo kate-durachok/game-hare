@@ -1,9 +1,9 @@
 import pygame
-from presset_g import *
+from presset_l1 import *
 
 
 
-def game_loop(screen, bg):
+def level1_loop(screen, bg):
 
     bg.blit(BackGround.image, BackGround.rect)
     left = right = up = down = False

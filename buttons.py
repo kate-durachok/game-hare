@@ -4,7 +4,6 @@ from os import path
 
 BUTTON_COLOR = "blue"
 BUTTON_PRESSED_COLOR = "red"
-BUTTON_TYPES = ["UP", "DOWN", "LEFT", "RIGHT", "CARROT"]
 
 class Button(sprite.Sprite):
     def __init__(self, image_files, x, y, bType):

@@ -12,7 +12,7 @@ pygame.mixer.music.set_volume(0.05)
 pygame.mixer.music.play(-1, 0)
 
 BACKGROUND_COLOR = "#90EE90"
-BackGround = Background('bg_menu.png', [0, 0])
+BackGround = Background('bg/bg_menu.png', [0, 0])
 
 mbtn1 = Button(['buttonm/bm_l1_0.png', 'buttonm/bm_l1_1.png', 'buttonm/bm_l1_2.png'], 100, 240, 0)
 mbtn2 = Button(['buttonm/bm_l2_0.png', 'buttonm/bm_l2_1.png', 'buttonm/bm_l2_2.png'], 100, 310, 0)
