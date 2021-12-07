@@ -1,6 +1,7 @@
 from pygame import *
 import pyganim
 from os import path
+from blocks import *
 
 COLOR = "#696969"
 ANIMATION_DELAY = 60  # скорость смены кадров
@@ -98,7 +99,7 @@ class Player(sprite.Sprite):
 
         #self.grass_sound = mixer.Sound(path.join('music/grass.wav'))
 
-    def update(self, left, right, up, down, screen):
+    def update(self, left, right, up, down, screen, platforms=[]):
         if left:
             self.vx = -self.speed
             self.image.fill(Color(COLOR))
@@ -134,7 +135,9 @@ class Player(sprite.Sprite):
             self.boltAnimStay.blit(self.image, (0, 0))
 
         self.rect.x += self.vx
+        self.collide(self.vx, 0, platforms)
         self.rect.y += self.vy
+        self.collide(0, self.vy, platforms)
 
         if self.rect.x + self.rect.width >= self.borders[1]:
             self.rect.x = self.borders[1] - self.rect.width
@@ -147,6 +150,24 @@ class Player(sprite.Sprite):
 
         if self.rect.y <= self.borders[2]:
             self.rect.y = self.borders[2]
+
+    def collide(self, xv, yv, platforms):
+        for p in platforms:
+            if sprite.collide_rect(self, p): # если есть пересечение платформы с игроком
+
+                if xv > 0:                      # если движется вправо
+                    self.rect.right = p.rect.left # то не движется вправо
+
+                if xv < 0:                      # если движется влево
+                    self.rect.left = p.rect.right # то не движется влево
+
+                if yv > 0:                      # если падает вниз
+                    self.rect.bottom = p.rect.top # то не падает вниз
+                    self.yv = 0                 # и энергия падения пропадает
+
+                if yv < 0:                      # если движется вверх
+                    self.rect.top = p.rect.bottom # то не движется вверх
+                    self.yv = 0                 # и энергия прыжка пропадает
 
     def draw(self, screen):  # Выводим себя на экран
         screen.blit(self.image, (self.rect.x, self.rect.y))
