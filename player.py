@@ -99,6 +99,10 @@ class Player(sprite.Sprite):
         #self.grass_sound = mixer.Sound(path.join('music/grass.wav'))
 
     def update(self, left, right, up, down, screen):
+
+        self.rect.x += self.vx
+        self.rect.y += self.vy
+
         if left:
             self.vx = -self.speed
             self.image.fill(Color(COLOR))
@@ -133,9 +137,6 @@ class Player(sprite.Sprite):
             self.image.fill(Color(COLOR))
             self.boltAnimStay.blit(self.image, (0, 0))
 
-        self.rect.x += self.vx
-        self.rect.y += self.vy
-
         if self.rect.x + self.rect.width >= self.borders[1]:
             self.rect.x = self.borders[1] - self.rect.width
 
@@ -150,4 +151,5 @@ class Player(sprite.Sprite):
 
     def draw(self, screen):  # Выводим себя на экран
         screen.blit(self.image, (self.rect.x, self.rect.y))
+
 

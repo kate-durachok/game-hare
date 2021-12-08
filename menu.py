@@ -20,10 +20,10 @@ def menu_loop(screen, bg):
             if e.type == QUIT:
                 raise SystemExit("QUIT")
 
-        mbtn1.Press()
-        mbtn2.Press()
-        mbtn3.Press()
-        mbtn4.Press()
+        mbtn1.press()
+        mbtn2.press()
+        mbtn3.press()
+        mbtn4.press()
 
         if mbtn1.state == 1:
             finished = True
