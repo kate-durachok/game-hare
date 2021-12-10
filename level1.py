@@ -10,7 +10,7 @@ def level1_loop(screen, bg):
     finished = False
 
     pygame.mixer.init()
-    pygame.mixer.music.load('music/game_s.mp3')
+    pygame.mixer.music.load('music/level_1.mp3')
     pygame.mixer.music.set_volume(0.05)
     pygame.mixer.music.play(-1, 0)
 

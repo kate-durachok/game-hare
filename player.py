@@ -35,7 +35,10 @@ ANIMATION_RIGHT = [[('hare/l_1/0/hr1.png'),
                                             ('hare/l_3/1/hr13.png')], [('hare/l_3/2/hr20.png'),
                                                                       ('hare/l_3/2/hr21.png'),
                                                                       ('hare/l_3/2/hr22.png'),
-                                                                      ('hare/l_3/2/hr23.png')]]
+                                                                      ('hare/l_3/2/hr23.png')], [('hare/l_3/3/hr30.png'),
+                                                                                                 ('hare/l_3/3/hr31.png'),
+                                                                                                 ('hare/l_3/3/hr32.png'),
+                                                                                                 ('hare/l_3/3/hr33.png')]]
 ANIMATION_LEFT = [[('hare/l_1/0/hl1.png'),
                   ('hare/l_1/0/hl2.png'),
                   ('hare/l_1/0/hl3.png'),
@@ -65,7 +68,10 @@ ANIMATION_LEFT = [[('hare/l_1/0/hl1.png'),
                                             ('hare/l_3/1/hl13.png')], [('hare/l_3/2/hl20.png'),
                                                                        ('hare/l_3/2/hl21.png'),
                                                                        ('hare/l_3/2/hl22.png'),
-                                                                       ('hare/l_3/2/hl23.png')]]
+                                                                       ('hare/l_3/2/hl23.png')], [('hare/l_3/3/hl30.png'),
+                                                                                                 ('hare/l_3/3/hl31.png'),
+                                                                                                 ('hare/l_3/3/hl32.png'),
+                                                                                                 ('hare/l_3/3/hl33.png')]]
 ANIMATION_UP = [[('hare/l_1/0/hu1.png'),
                 ('hare/l_1/0/hu1.png'),
                 ('hare/l_1/0/hu2.png'),
@@ -95,7 +101,10 @@ ANIMATION_UP = [[('hare/l_1/0/hu1.png'),
                                           ('hare/l_3/1/hu11.png')], [('hare/l_3/2/hu20.png'),
                                                                      ('hare/l_3/2/hu20.png'),
                                                                      ('hare/l_3/2/hu21.png'),
-                                                                     ('hare/l_3/2/hu21.png')]]
+                                                                     ('hare/l_3/2/hu21.png')], [('hare/l_3/3/hu30.png'),
+                                                                                                ('hare/l_3/3/hu30.png'),
+                                                                                                ('hare/l_3/3/hu31.png'),
+                                                                                                ('hare/l_3/3/hu31.png')]]
 ANIMATION_DOWN = [[('hare/l_1/0/hd1.png'),
                    ('hare/l_1/0/hd1.png'),
                    ('hare/l_1/0/hd2.png'),
@@ -125,7 +134,10 @@ ANIMATION_DOWN = [[('hare/l_1/0/hd1.png'),
                                             ('hare/l_3/1/hd11.png')], [('hare/l_3/2/hd20.png'),
                                                                        ('hare/l_3/2/hd20.png'),
                                                                        ('hare/l_3/2/hd21.png'),
-                                                                       ('hare/l_3/2/hd21.png')]]
+                                                                       ('hare/l_3/2/hd21.png')], [('hare/l_3/3/hd30.png'),
+                                                                                                  ('hare/l_3/3/hd30.png'),
+                                                                                                  ('hare/l_3/3/hd31.png'),
+                                                                                                  ('hare/l_3/3/hd31.png')]]
 ANIMATION_STAY = [(('hare/l_1/0/hd1.png'), ANIMATION_DELAY),
                   (('hare/l_1/1/hd10.png'), ANIMATION_DELAY),
                   (('hare/l_1/2/hd20.png'), ANIMATION_DELAY),
@@ -134,7 +146,8 @@ ANIMATION_STAY = [(('hare/l_1/0/hd1.png'), ANIMATION_DELAY),
                   (('hare/l_2/2/hd20.png'), ANIMATION_DELAY),
                   (('hare/l_3/0/hd1.png'), ANIMATION_DELAY),
                   (('hare/l_3/1/hd10.png'), ANIMATION_DELAY),
-                  (('hare/l_3/2/hd20.png'), ANIMATION_DELAY)]
+                  (('hare/l_3/2/hd20.png'), ANIMATION_DELAY),
+                  (('hare/l_3/3/hd30.png'), ANIMATION_DELAY)]
 
 
 class Player(sprite.Sprite):
