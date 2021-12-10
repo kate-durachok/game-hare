@@ -12,12 +12,7 @@ def main():
 
     bg = Surface((WIN_WIDTH, WIN_HEIGHT))
 
-    #menu_loop(screen, bg)
-    #level1_loop(screen, bg)
-    level2_loop(screen, bg)
-    #menu_loop(screen, bg)
-
-
-
+    menu_loop(screen, bg)
+    
 if __name__ == "__main__":
     main()

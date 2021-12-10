@@ -1,11 +1,11 @@
 import pygame
-from presset_l1 import *
+from presset_l3 import *
 
 
 
-def level1_loop(screen, bg):
-    BackGroundL1, hero, hero1, hero2, btn1, btn2, btn3, btn4, btn5, btn11, btn12, btn13, btn14, btn15, btn22 = pressetl1()
-    bg.blit(BackGroundL1.image, BackGroundL1.rect)
+def level3_loop(screen, bg):
+
+    bg.blit(BackGroundL3.image, BackGroundL3.rect)
     left = right = up = down = False
     finished = False
 
@@ -43,9 +43,33 @@ def level1_loop(screen, bg):
                 finished = True
 
         screen.blit(bg, (0, 0))
+        hero.draw(screen)
+        hero1.draw(screen)
+        hero2.draw(screen)
+        hero3.draw(screen)
+        hero.update(left, right, up, down, screen)
+        hero1.update(left, right, up, down, screen)
+        hero2.update(left, right, up, down, screen)
+        hero3.update(left, right, up, down, screen)    #передвижение
 
-        hero.update(left, right, up, down, screen)  # передвижение
+        btn1.draw(screen)
+        btn2.draw(screen)
+        btn3.draw(screen)
+        btn4.draw(screen)
+        btn5.draw(screen)
+        btn11.draw(screen)
+        btn12.draw(screen)
+        btn13.draw(screen)
+        btn14.draw(screen)
+        btn15.draw(screen)
+        btn21.draw(screen)
+        btn22.draw(screen)
+        btn23.draw(screen)
+        btn24.draw(screen)
+        btn25.draw(screen)
+        btn31.draw(screen)
 
+        """
         btn1.checkMePressed(hero)
         btn1.draw(screen)
 
@@ -82,8 +106,7 @@ def level1_loop(screen, bg):
         else:
             down1 = False
 
-        if btn1.state == 1:
-            hero1.update(left1, right1, up1, down1, screen)
+        hero1.update(left1, right1, up1, down1, screen)
 
         btn11.checkMePressed(hero1)
 
@@ -127,15 +150,14 @@ def level1_loop(screen, bg):
         else:
             down2 = False
 
-        if btn11.state == 1:
-            hero2.update(left2, right2, up2, down2, screen)
+        hero2.update(left2, right2, up2, down2, screen)
 
         btn22.checkMePressed(hero2)
 
         if btn22.state == 1:
             finished = True
 
-        hero.draw(screen)
+        hero.draw(screen)"""
 
         pygame.display.update()
 
