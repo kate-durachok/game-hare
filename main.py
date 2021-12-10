@@ -1,5 +1,6 @@
 import pygame
 from level1 import *
+from level2 import *
 from menu import *
 
 
@@ -12,8 +13,9 @@ def main():
     bg = Surface((WIN_WIDTH, WIN_HEIGHT))
 
     #menu_loop(screen, bg)
-    level1_loop(screen, bg)
-    menu_loop(screen, bg)
+    #level1_loop(screen, bg)
+    level2_loop(screen, bg)
+    #menu_loop(screen, bg)
 
 
 

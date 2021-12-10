@@ -25,7 +25,7 @@ def menu_loop(screen, bg):
         mbtn3.press()
         mbtn4.press()
 
-        if mbtn1.state == 1:
+        if mbtn2.state == 1:
             finished = True
             pygame.mixer.music.stop()
 

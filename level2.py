@@ -1,9 +1,63 @@
 import pygame
-from presset_l1 import *
+from presset_l2 import *
+from blocks import *
 
+entities = pygame.sprite.Group()  # Все объекты
+platforms = []  # то, во что мы будем врезаться или опираться
 
+entities.add(hero)
+level = [
+    ".............-..................",
+    ".............-..................",
+    ".............-..................",
+    ".............-...-..............",
+    ".................-..............",
+    ".................-..............",
+    ".............-...-..............",
+    ".............-...-..............",
+    "................................",
+    "................................",
+    "................................",
+    ".................-------........",
+    "................................",
+    "................................",
+    "................................",
+    "................................",
+    "........----....................",
+    "................................",
+    "................................",
+    "................................",
+    "................................",
+    "......-......................-..",
+    "......-......................-..",
+    "......-......................-..",
+    "......-......................-..",
+    "......-......................-..",
+    "......-......................-..",
+    "......-.........................",
+    "......-.........................",
+    "......-....-....................",
+    "......-....-....................",
+    "...........-....................",
+    "...........-....................",
+    "...........-....................",
+    "...........-....................",
+    "...........-...................."
+]
 
-def level1_loop(screen, bg):
+x = y = 0  # координаты
+for row in level:  # вся строка
+    for col in row:  # каждый символ
+        if col == "-":
+            pf = Platform(x, y)
+            entities.add(pf)
+            platforms.append(pf)
+
+        x += PLATFORM_WIDTH  # блоки платформы ставятся на ширине блоков
+    y += PLATFORM_HEIGHT     # то же самое и с высотой
+    x = 0                    # на каждой новой строчке начинаем с нуля
+
+def level2_loop(screen, bg):
 
     bg.blit(BackGround.image, BackGround.rect)
     left = right = up = down = False
@@ -42,7 +96,7 @@ def level1_loop(screen, bg):
 
         screen.blit(bg, (0, 0))
 
-        hero.update(left, right, up, down, screen)  # передвижение
+        hero.update(left, right, up, down, screen, platforms)  # передвижение
 
         btn1.checkMePressed(hero)
         btn1.draw(screen)
@@ -80,7 +134,8 @@ def level1_loop(screen, bg):
         else:
             down1 = False
 
-        hero1.update(left1, right1, up1, down1, screen)
+        if btn1.state == 1:
+            hero1.update(left1, right1, up1, down1, screen, platforms)
 
         btn11.checkMePressed(hero1)
 
@@ -124,7 +179,8 @@ def level1_loop(screen, bg):
         else:
             down2 = False
 
-        hero2.update(left2, right2, up2, down2, screen)
+        if btn11.state == 1:
+            hero2.update(left2, right2, up2, down2, screen, platforms)
 
         btn22.checkMePressed(hero2)
 
@@ -132,7 +188,8 @@ def level1_loop(screen, bg):
             finished = True
 
         hero.draw(screen)
+        for e in entities:
+            state = Rect(0, 0, WIN_WIDTH, WIN_HEIGHT)
+            screen.blit(e.image,  e.rect.move(state.topleft))
 
         pygame.display.update()
-
-    pygame.mixer.music.stop()

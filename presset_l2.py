@@ -14,9 +14,9 @@ BACKGROUND_COLOR = "#90EE90"
 BackGround = Background('bg/bg_l2.png', [0, 0])
 
 
-hero = Player(800, 800, [0, WIN_WIDTH, 500, WIN_HEIGHT], 80, 60, 3, 0)  # создаем героя по (x,y) координатам
-hero1 = Player(530, 450, [200, 600, 200, 500], 60, 40, 2, 1)
-hero2 = Player(450, 150, [275, 525, 0, 200], 40, 30, 1, 2)
+hero = Player(800, 800, [0, WIN_WIDTH, 500, WIN_HEIGHT], 80, 60, 3, 3)  # создаем героя по (x,y) координатам
+hero1 = Player(530, 450, [200, 600, 200, 500], 60, 40, 2, 4)
+hero2 = Player(470, 150, [275, 525, 0, 200], 40, 30, 1, 5)
 
 btn1 = Button(['buttonc/bc0.png', 'buttonc/bc1.png'], 20, 520, 0)
 

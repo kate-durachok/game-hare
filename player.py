@@ -1,53 +1,97 @@
 from pygame import *
 import pyganim
 from os import path
+from blocks import *
 
 COLOR = "#696969"
 ANIMATION_DELAY = 60  # скорость смены кадров
 
-ANIMATION_RIGHT = [[('hare/hr1.png'),
-                   ('hare/hr2.png'),
-                   ('hare/hr3.png'),
-                   ('hare/hr4.png')], [('hare/1/hr10.png'),
-                                      ('hare/1/hr11.png'),
-                                      ('hare/1/hr12.png'),
-                                      ('hare/1/hr13.png')], [('hare/2/hr20.png'),
-                                                             ('hare/2/hr21.png'),
-                                                             ('hare/2/hr22.png'),
-                                                             ('hare/2/hr23.png')]]
-ANIMATION_LEFT = [[('hare/hl1.png'),
-                  ('hare/hl2.png'),
-                  ('hare/hl3.png'),
-                  ('hare/hl4.png')], [('hare/1/hl10.png'),
-                                      ('hare/1/hl11.png'),
-                                      ('hare/1/hl12.png'),
-                                      ('hare/1/hl13.png')], [('hare/2/hl20.png'),
-                                                             ('hare/2/hl21.png'),
-                                                             ('hare/2/hl22.png'),
-                                                             ('hare/2/hl23.png')]]
-ANIMATION_UP = [[('hare/hu1.png'),
-                ('hare/hu1.png'),
-                ('hare/hu2.png'),
-                ('hare/hu2.png')], [('hare/1/hu10.png'),
-                                    ('hare/1/hu10.png'),
-                                    ('hare/1/hu11.png'),
-                                    ('hare/1/hu11.png')], [('hare/2/hu20.png'),
-                                                           ('hare/2/hu20.png'),
-                                                           ('hare/2/hu21.png'),
-                                                           ('hare/2/hu21.png')]]
-ANIMATION_DOWN = [[('hare/hd1.png'),
-                  ('hare/hd1.png'),
-                  ('hare/hd2.png'),
-                  ('hare/hd2.png')], [('hare/1/hd10.png'),
-                                      ('hare/1/hd10.png'),
-                                      ('hare/1/hd11.png'),
-                                      ('hare/1/hd11.png')], [('hare/2/hd20.png'),
-                                                             ('hare/2/hd20.png'),
-                                                             ('hare/2/hd21.png'),
-                                                             ('hare/2/hd21.png')]]
-ANIMATION_STAY = [(('hare/hd1.png'), ANIMATION_DELAY),
-                  (('hare/1/hd10.png'), ANIMATION_DELAY),
-                  (('hare/2/hd20.png'), ANIMATION_DELAY)]
+ANIMATION_RIGHT = [[('hare/l_1/0/hr1.png'),
+                   ('hare/l_1/0/hr2.png'),
+                   ('hare/l_1/0/hr3.png'),
+                   ('hare/l_1/0/hr4.png')], [('hare/l_1/1/hr10.png'),
+                                            ('hare/l_1/1/hr11.png'),
+                                            ('hare/l_1/1/hr12.png'),
+                                            ('hare/l_1/1/hr13.png')], [('hare/l_1/2/hr20.png'),
+                                                                      ('hare/l_1/2/hr21.png'),
+                                                                      ('hare/l_1/2/hr22.png'),
+                                                                      ('hare/l_1/2/hr23.png')],
+                  [('hare/l_2/0/hr1.png'),
+                   ('hare/l_2/0/hr2.png'),
+                   ('hare/l_2/0/hr3.png'),
+                   ('hare/l_2/0/hr4.png')], [('hare/l_2/1/hr10.png'),
+                                            ('hare/l_2/1/hr11.png'),
+                                            ('hare/l_2/1/hr12.png'),
+                                            ('hare/l_2/1/hr13.png')], [('hare/l_2/2/hr20.png'),
+                                                                      ('hare/l_2/2/hr21.png'),
+                                                                      ('hare/l_2/2/hr22.png'),
+                                                                      ('hare/l_2/2/hr23.png')]]
+ANIMATION_LEFT = [[('hare/l_1/0/hl1.png'),
+                  ('hare/l_1/0/hl2.png'),
+                  ('hare/l_1/0/hl3.png'),
+                  ('hare/l_1/0/hl4.png')], [('hare/l_1/1/hl10.png'),
+                                            ('hare/l_1/1/hl11.png'),
+                                            ('hare/l_1/1/hl12.png'),
+                                            ('hare/l_1/1/hl13.png')], [('hare/l_1/2/hl20.png'),
+                                                                       ('hare/l_1/2/hl21.png'),
+                                                                       ('hare/l_1/2/hl22.png'),
+                                                                       ('hare/l_1/2/hl23.png')],
+                 [('hare/l_2/0/hl1.png'),
+                  ('hare/l_2/0/hl2.png'),
+                  ('hare/l_2/0/hl3.png'),
+                  ('hare/l_2/0/hl4.png')], [('hare/l_2/1/hl10.png'),
+                                            ('hare/l_2/1/hl11.png'),
+                                            ('hare/l_2/1/hl12.png'),
+                                            ('hare/l_2/1/hl13.png')], [('hare/l_2/2/hl20.png'),
+                                                                       ('hare/l_2/2/hl21.png'),
+                                                                       ('hare/l_2/2/hl22.png'),
+                                                                       ('hare/l_2/2/hl23.png')]]
+ANIMATION_UP = [[('hare/l_1/0/hu1.png'),
+                ('hare/l_1/0/hu1.png'),
+                ('hare/l_1/0/hu2.png'),
+                ('hare/l_1/0/hu2.png')], [('hare/l_1/1/hu10.png'),
+                                          ('hare/l_1/1/hu10.png'),
+                                          ('hare/l_1/1/hu11.png'),
+                                          ('hare/l_1/1/hu11.png')], [('hare/l_1/2/hu20.png'),
+                                                                     ('hare/l_1/2/hu20.png'),
+                                                                     ('hare/l_1/2/hu21.png'),
+                                                                     ('hare/l_1/2/hu21.png')],
+               [('hare/l_2/0/hu1.png'),
+                ('hare/l_2/0/hu1.png'),
+                ('hare/l_2/0/hu2.png'),
+                ('hare/l_2/0/hu2.png')], [('hare/l_2/1/hu10.png'),
+                                          ('hare/l_2/1/hu10.png'),
+                                          ('hare/l_2/1/hu11.png'),
+                                          ('hare/l_2/1/hu11.png')], [('hare/l_2/2/hu20.png'),
+                                                                     ('hare/l_2/2/hu20.png'),
+                                                                     ('hare/l_2/2/hu21.png'),
+                                                                     ('hare/l_2/2/hu21.png')]]
+ANIMATION_DOWN = [[('hare/l_1/0/hd1.png'),
+                  ('hare/l_1/0/hd1.png'),
+                  ('hare/l_1/0/hd2.png'),
+                  ('hare/l_1/0/hd2.png')], [('hare/l_1/1/hd10.png'),
+                                            ('hare/l_1/1/hd10.png'),
+                                            ('hare/l_1/1/hd11.png'),
+                                            ('hare/l_1/1/hd11.png')], [('hare/l_1/2/hd20.png'),
+                                                                       ('hare/l_1/2/hd20.png'),
+                                                                       ('hare/l_1/2/hd21.png'),
+                                                                       ('hare/l_1/2/hd21.png')],
+                 [('hare/l_1/0/hd1.png'),
+                  ('hare/l_2/0/hd1.png'),
+                  ('hare/l_2/0/hd2.png'),
+                  ('hare/l_2/0/hd2.png')], [('hare/l_2/1/hd10.png'),
+                                            ('hare/l_2/1/hd10.png'),
+                                            ('hare/l_2/1/hd11.png'),
+                                            ('hare/l_2/1/hd11.png')], [('hare/l_2/2/hd20.png'),
+                                                                       ('hare/l_2/2/hd20.png'),
+                                                                       ('hare/l_2/2/hd21.png'),
+                                                                       ('hare/l_2/2/hd21.png')]]
+ANIMATION_STAY = [(('hare/l_1/0/hd1.png'), ANIMATION_DELAY),
+                  (('hare/l_1/1/hd10.png'), ANIMATION_DELAY),
+                  (('hare/l_1/2/hd20.png'), ANIMATION_DELAY),
+                  (('hare/l_2/0/hd1.png'), ANIMATION_DELAY),
+                  (('hare/l_2/1/hd10.png'), ANIMATION_DELAY),
+                  (('hare/l_2/2/hd20.png'), ANIMATION_DELAY)]
 
 
 class Player(sprite.Sprite):
@@ -98,10 +142,7 @@ class Player(sprite.Sprite):
 
         #self.grass_sound = mixer.Sound(path.join('music/grass.wav'))
 
-    def update(self, left, right, up, down, screen):
-
-        self.rect.x += self.vx
-        self.rect.y += self.vy
+    def update(self, left, right, up, down, screen, platforms=[]):
 
         if left:
             self.vx = -self.speed
@@ -137,6 +178,11 @@ class Player(sprite.Sprite):
             self.image.fill(Color(COLOR))
             self.boltAnimStay.blit(self.image, (0, 0))
 
+        self.rect.x += self.vx
+        self.collide(self.vx, 0, platforms)
+        self.rect.y += self.vy
+        self.collide(0, self.vy, platforms)
+
         if self.rect.x + self.rect.width >= self.borders[1]:
             self.rect.x = self.borders[1] - self.rect.width
 
@@ -148,6 +194,24 @@ class Player(sprite.Sprite):
 
         if self.rect.y <= self.borders[2]:
             self.rect.y = self.borders[2]
+
+    def collide(self, xv, yv, platforms):
+        for p in platforms:
+            if sprite.collide_rect(self, p):  # если есть пересечение платформы с игроком
+
+                if xv > 0:  # если движется вправо
+                    self.rect.right = p.rect.left  # то не движется вправо
+
+                if xv < 0:  # если движется влево
+                    self.rect.left = p.rect.right  # то не движется влево
+
+                if yv > 0:  # если падает вниз
+                    self.rect.bottom = p.rect.top  # то не падает вниз
+                    self.yv = 0  # и энергия падения пропадает
+
+                if yv < 0:  # если движется вверх
+                    self.rect.top = p.rect.bottom  # то не движется вверх
+                    self.yv = 0  # и энергия прыжка пропадает
 
     def draw(self, screen):  # Выводим себя на экран
         screen.blit(self.image, (self.rect.x, self.rect.y))
