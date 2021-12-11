@@ -195,3 +195,5 @@ def level2_loop(screen, bg):
             screen.blit(e.image,  e.rect.move(state.topleft))
 
         pygame.display.update()
+
+    pygame.mixer.music.stop()

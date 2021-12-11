@@ -15,6 +15,8 @@ def level3_loop(screen, bg):
     pygame.mixer.music.set_volume(0.05)
     pygame.mixer.music.play(-1, 0)
 
+
+
     while not finished:
 
         for e in pygame.event.get():
@@ -70,7 +72,6 @@ def level3_loop(screen, bg):
             right1 = True
         else:
             right1 = False
-
         if btn4.checkMePressed(hero) == 1:
             up1 = True
         else:

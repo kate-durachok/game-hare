@@ -17,7 +17,7 @@ def pressetl3():
     hero = Player(800, 900, [0, WIN_WIDTH, 600, WIN_HEIGHT], 80, 60, 3, 6)  # создаем героя по (x,y) координатам
     hero1 = Player(650, 600, [150, 650, 350, 593], 60, 40, 2, 7)
     hero2 = Player(600, 350, [200, 600, 150, 343], 40, 30, 1, 8)
-    hero3 = Player(550, 150, [250, 550, 0, 140], 30, 20, 1, 9)
+    hero3 = Player(510, 115, [250, 550, 0, 140], 30, 20, 1, 9)
 
     btn1 = Button(['buttonc/bc0.png', 'buttonc/bc1.png'], 20, 620, 0)
 
