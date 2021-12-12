@@ -1,4 +1,3 @@
-import pygame
 from background import *
 from buttons import *
 
@@ -9,6 +8,7 @@ DISPLAY = (WIN_WIDTH, WIN_HEIGHT)
 
 BACKGROUND_COLOR = "#90EE90"
 BackGroundM = Background('bg/bg_menu.png', [0, 0])
+
 
 mbtn1 = Button(['buttonm/bm_l1_0.png', 'buttonm/bm_l1_1.png', 'buttonm/bm_l1_2.png'], 100, 240, 0)
 mbtn2 = Button(['buttonm/bm_l2_0.png', 'buttonm/bm_l2_1.png', 'buttonm/bm_l2_2.png'], 100, 310, 0)

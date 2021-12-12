@@ -1,6 +1,3 @@
-import pygame
-from level1 import *
-from level2 import *
 from menu import *
 
 

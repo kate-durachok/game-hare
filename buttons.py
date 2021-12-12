@@ -1,12 +1,8 @@
 from pygame import *
-from os import path
 
 
 BUTTON_COLOR = "blue"
 BUTTON_PRESSED_COLOR = "red"
-
-"""init()
-button_sound = mixer.Sound(path.join('music/button.ogg'))"""
 
 class Button(sprite.Sprite):
     def __init__(self, image_files, x, y, bType):

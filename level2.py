@@ -1,4 +1,3 @@
-import pygame
 from presset_l2 import *
 from blocks import *
 

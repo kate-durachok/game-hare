@@ -1,6 +1,4 @@
-from pygame import *
 import pyganim
-from os import path
 from blocks import *
 
 COLOR = "#696969"

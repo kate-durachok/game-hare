@@ -1,4 +1,3 @@
-import pygame
 from player import *
 from buttons import *
 from background import *

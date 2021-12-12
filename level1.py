@@ -1,6 +1,4 @@
-import pygame
 from presset_l1 import *
-
 
 
 def level1_loop(screen, bg):
