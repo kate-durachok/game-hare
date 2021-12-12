@@ -4,6 +4,8 @@ from level2 import *
 from level3 import *
 from rules import *
 from win import *
+from lcomplite import *
+from end import *
 
 
 def menu_loop(screen, bg):
@@ -34,7 +36,7 @@ def menu_loop(screen, bg):
         if mbtn1.state == 1:
             rules(screen, bg)
             level1_loop(screen, bg)
-            win(screen, bg)
+            levelc(screen, bg)
             mbtn1.state = 0
             bg.blit(BackGroundM.image, BackGroundM.rect)
             pygame.mixer.music.load('music/menu_s.mp3')
@@ -42,7 +44,7 @@ def menu_loop(screen, bg):
 
         if mbtn2.state == 1:
             level2_loop(screen, bg)
-            win(screen, bg)
+            levelc(screen, bg)
             mbtn2.state = 0
             bg.blit(BackGroundM.image, BackGroundM.rect)
             pygame.mixer.music.load('music/menu_s.mp3')
@@ -51,6 +53,7 @@ def menu_loop(screen, bg):
         if mbtn3.state == 1:
             level3_loop(screen, bg)
             win(screen, bg)
+            end(screen, bg)
             mbtn3.state = 0
             bg.blit(BackGroundM.image, BackGroundM.rect)
             pygame.mixer.music.load('music/menu_s.mp3')
