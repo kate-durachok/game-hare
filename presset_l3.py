@@ -2,6 +2,7 @@ from classes.player import *
 from classes.buttons import *
 from classes.background import *
 
+
 def pressetl3():
     """
     много всяких штук для 3го уровня, оформлена как функция. чтобы при перезапуске параметры сбрасывались
@@ -41,4 +42,3 @@ def pressetl3():
     btn31 = Button(['images/buttonc/bc200.png', 'images/buttonc/bc201.png'], 260, 10, 0)  # конец уровня и игры
 
     return BackGroundL3, hero, hero1, hero2, hero3, btn1, btn2, btn3, btn4, btn5, btn11, btn12, btn13, btn14, btn15, btn21, btn22, btn23, btn24, btn25, btn31, FPS
-

@@ -2,6 +2,7 @@ from classes.player import *
 from classes.buttons import *
 from classes.background import *
 
+
 def pressetl2():
     """
         много всяких штук для 2го уровня, оформлена как функция. чтобы при перезапуске параметры сбрасывались
@@ -23,7 +24,7 @@ def pressetl2():
     btn4 = Button(['images/buttons/bu0.png', 'images/buttons/bu1.png'], 480, 620, 1)  # кнопка движения вверх для игрока hero1
     btn5 = Button(['images/buttons/bd0.png', 'images/buttons/bd1.png'], 480, 700, 1)  # кнопка движения вниз для игрока hero1
 
-    btn11 = Button(['images/buttonc/bc10.png', 'images/buttonc/bc11.png'], 220, 220, 0) # кнопка для создания hero2 и кнопок на его поле
+    btn11 = Button(['images/buttonc/bc10.png', 'images/buttonc/bc11.png'], 220, 220, 0)  # кнопка для создания hero2 и кнопок на его поле
 
     btn12 = Button(['images/buttons/1/bl10.png', 'images/buttons/1/bl11.png'], 370, 410, 1)  # кнопка движения влево для игрока hero2
     btn13 = Button(['images/buttons/1/br10.png', 'images/buttons/1/br11.png'], 490, 410, 1)  # кнопка движения вправо для игрока hero2

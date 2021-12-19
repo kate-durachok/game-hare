@@ -1,6 +1,7 @@
 from presset_l1 import *
 import time
 
+
 def level1_loop(screen, bg):
     BackGroundL1, hero, hero1, hero2, btn1, btn2, btn3, btn4, btn5, btn11, btn12, btn13, btn14, btn15, btn22, FPS = pressetl1()
     bg.blit(BackGroundL1.image, BackGroundL1.rect)
@@ -10,7 +11,7 @@ def level1_loop(screen, bg):
     pg.mixer.init()
     pg.mixer.music.load('music/level_1.mp3')
     pg.mixer.music.set_volume(0.05)
-    pg.mixer.music.play(-1, 0)
+    pg.mixer.music.play(-1, 0)  # включаем летнюю музыку
 
     while not finished:
         t = time.time()
@@ -59,8 +60,6 @@ def level1_loop(screen, bg):
         btn4.checkMePressed(hero)
         btn5.checkMePressed(hero)
 
-
-
         if btn2.checkMePressed(hero) == 1:
             left1 = True
         else:
@@ -95,7 +94,6 @@ def level1_loop(screen, bg):
             btn22.draw(screen)
             hero2.draw(screen)
 
-
         if btn1.state == 1:
             btn11.draw(screen)
             hero1.draw(screen)
@@ -104,7 +102,6 @@ def level1_loop(screen, bg):
         btn13.checkMePressed(hero1)
         btn14.checkMePressed(hero1)
         btn15.checkMePressed(hero1)
-
 
         if btn12.checkMePressed(hero1) == 1:
             left2 = True

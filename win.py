@@ -2,6 +2,7 @@ from classes.background import *
 
 BackGroundW = Background('images/bg/bg_win.png', [0, 0])
 
+
 def win(screen, bg):
     """
     показывaет при завершении 3 уровня на экране картинку вы победили, звучат победные фанфары

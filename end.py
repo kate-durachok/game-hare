@@ -2,10 +2,16 @@ from classes.background import *
 from classes.buttons import *
 
 BackGroundE = Background('images/bg/bg_end.png', [0, 0])
-ebtn1 = Button(['images/buttone/be_m_0.png', 'images/buttone/be_m_1.png', 'images/buttone/be_m_2.png'], 500, 430, 0)
-ebtn2 = Button(['images/buttone/be_ex_0.png', 'images/buttone/be_ex_1.png', 'images/buttone/be_ex_2.png'], 500, 520, 0)
+ebtn1 = Button(['images/buttone/be_m_0.png', 'images/buttone/be_m_1.png', 'images/buttone/be_m_2.png'], 500, 430, 0)  # кнопка для возвращения в меню
+ebtn2 = Button(['images/buttone/be_ex_0.png', 'images/buttone/be_ex_1.png', 'images/buttone/be_ex_2.png'], 500, 520, 0)  # кнопка выхода из игры
+
 
 def end(screen, bg):
+    """
+    показывает при завершении 3 уровня картинку с авторами и звучит умиротворяющая музыка
+    :param screen: screen
+    :param bg: картинка png
+    """
     bg.blit(BackGroundE.image, BackGroundE.rect)
     finished = False
 

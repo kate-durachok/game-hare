@@ -4,6 +4,7 @@ import pygame as pg
 BUTTON_COLOR = "blue"
 BUTTON_PRESSED_COLOR = "red"
 
+
 class Button(pg.sprite.Sprite):
     """
     класс кнопок, используется как в меню так и в самой игре

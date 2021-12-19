@@ -2,6 +2,7 @@ from presset_l2 import *
 from classes.blocks import *
 import time
 
+
 def level2_loop(screen, bg):
     BackGroundL2, hero, hero1, hero2, btn1, btn2, btn3, btn4, btn5, btn11, btn12, btn13, btn14, btn15, btn22, WIN_WIDTH, WIN_HEIGHT, FPS = pressetl2()
     entities = pg.sprite.Group()  # Все объекты
@@ -115,8 +116,6 @@ def level2_loop(screen, bg):
         btn3.checkMePressed(hero)
         btn4.checkMePressed(hero)
         btn5.checkMePressed(hero)
-
-
 
         if btn2.checkMePressed(hero) == 1:
             left1 = True

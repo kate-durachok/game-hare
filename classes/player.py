@@ -215,6 +215,7 @@ class Player(pg.sprite.Sprite):
     def update(self, left, right, up, down, screen, blocks=[]):
         """
         Обновление -> для движения игрока
+        :param screen: screen
         :param left: движение влево
         :param right:  движение вправо
         :param up: движение вверх

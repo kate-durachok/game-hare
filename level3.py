@@ -1,6 +1,7 @@
 from presset_l3 import *
 import time
 
+
 def level3_loop(screen, bg):
     BackGroundL3, hero, hero1, hero2, hero3, btn1, btn2, btn3, btn4, btn5, btn11, btn12, btn13, btn14, btn15, btn21, btn22, btn23, btn24, btn25, btn31, FPS = pressetl3()
 
@@ -12,7 +13,6 @@ def level3_loop(screen, bg):
     pg.mixer.music.load('music/level_3.mp3')
     pg.mixer.music.set_volume(0.05)
     pg.mixer.music.play(-1, 0)
-
 
     while not finished:
         t = time.time()

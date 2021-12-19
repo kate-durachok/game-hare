@@ -2,6 +2,7 @@ from classes.player import *
 from classes.buttons import *
 from classes.background import *
 
+
 def pressetl1():
     """
     много всяких штук для 2го уровня, оформлена как функция. чтобы при перезапуске параметры сбрасывались
@@ -11,7 +12,6 @@ def pressetl1():
     WIN_HEIGHT = 900
     FPS = 60
     BackGroundL1 = Background('images/bg/bg_l1.png', [0, 0])
-
 
     hero = Player(800, 800, [0, WIN_WIDTH, 500, WIN_HEIGHT], 80, 60, 3, 0)  # создаем героя по (x,y) координатам
     hero1 = Player(530, 450, [200, 600, 200, 500], 60, 40, 2, 1)

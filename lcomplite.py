@@ -2,7 +2,13 @@ from classes.background import *
 
 BackGroundLC = Background('images/bg/bg_lc.png', [0, 0])
 
+
 def levelc(screen, bg):
+    """
+    показывпет при завершении уровня картинку "level completed" и звучат победные фанфары
+    :param screen: screen
+    :param bg: картинка png
+    """
     bg.blit(BackGroundLC.image, BackGroundLC.rect)
     finished = False
 
