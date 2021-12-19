@@ -5,7 +5,7 @@ from classes.blocks import *
 def level2_loop(screen, bg):
     BackGroundL2, hero, hero1, hero2, btn1, btn2, btn3, btn4, btn5, btn11, btn12, btn13, btn14, btn15, btn22, WIN_WIDTH, WIN_HEIGHT = pressetl2()
     entities = pg.sprite.Group()  # Все объекты
-    platforms = []  # то, во что мы будем врезаться или опираться
+    blocks = []  # то, во что мы будем врезаться или опираться
 
     entities.add(hero)
     level = [
@@ -51,9 +51,9 @@ def level2_loop(screen, bg):
     for row in level:  # вся строка
         for col in row:  # каждый символ
             if col == "-":
-                pf = Platform(x, y)
+                pf = Block(x, y)
                 entities.add(pf)
-                platforms.append(pf)
+                blocks.append(pf)
 
             x += PLATFORM_WIDTH  # блоки платформы ставятся на ширине блоков
         y += PLATFORM_HEIGHT  # то же самое и с высотой
@@ -99,7 +99,7 @@ def level2_loop(screen, bg):
 
         screen.blit(bg, (0, 0))
 
-        hero.update(left, right, up, down, screen, platforms)  # передвижение
+        hero.update(left, right, up, down, screen, blocks)  # передвижение
 
         btn1.checkMePressed(hero)
         btn1.draw(screen)
