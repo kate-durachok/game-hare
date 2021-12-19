@@ -1,5 +1,5 @@
-from background import *
-from buttons import *
+from classes.background import *
+from classes.buttons import *
 
 BackGroundE = Background('images/bg/bg_end.png', [0, 0])
 ebtn1 = Button(['images/buttone/be_m_0.png', 'images/buttone/be_m_1.png', 'images/buttone/be_m_2.png'], 500, 430, 0)

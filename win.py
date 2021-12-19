@@ -1,4 +1,4 @@
-from background import *
+from classes.background import *
 
 BackGroundW = Background('images/bg/bg_win.png', [0, 0])
 

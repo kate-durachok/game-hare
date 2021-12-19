@@ -1,5 +1,5 @@
 import pyganim
-from blocks import *
+from classes.blocks import *
 
 COLOR = "#696969"
 ANIMATION_DELAY = 60  # скорость смены кадров

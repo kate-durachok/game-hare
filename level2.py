@@ -1,5 +1,5 @@
 from presset_l2 import *
-from blocks import *
+from classes.blocks import *
 
 
 def level2_loop(screen, bg):

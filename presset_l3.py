@@ -1,6 +1,6 @@
-from player import *
-from buttons import *
-from background import *
+from classes.player import *
+from classes.buttons import *
+from classes.background import *
 
 def pressetl3():
     WIN_WIDTH = 800

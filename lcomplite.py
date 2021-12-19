@@ -1,4 +1,4 @@
-from background import *
+from classes.background import *
 
 BackGroundLC = Background('images/bg/bg_lc.png', [0, 0])
 

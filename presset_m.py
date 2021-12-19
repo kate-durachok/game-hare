@@ -1,5 +1,5 @@
-from background import *
-from buttons import *
+from classes.background import *
+from classes.buttons import *
 
 WIN_WIDTH = 800
 WIN_HEIGHT = 900
