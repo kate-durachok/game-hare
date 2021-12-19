@@ -4,7 +4,8 @@ import time
 
 
 def level2_loop(screen, bg):
-    BackGroundL2, hero, hero1, hero2, btn1, btn2, btn3, btn4, btn5, btn11, btn12, btn13, btn14, btn15, btn22, WIN_WIDTH, WIN_HEIGHT, FPS = pressetl2()
+    BackGroundL2, hero, hero1, hero2, btn1, btn2, btn3, btn4, btn5, btn11, btn12, \
+    btn13, btn14, btn15, btn22, WIN_WIDTH, WIN_HEIGHT, FPS = pressetl2()
     entities = pg.sprite.Group()  # Все объекты
     blocks = []  # то, во что мы будем врезаться или опираться
 
@@ -71,28 +72,23 @@ def level2_loop(screen, bg):
 
     while not finished:
         t = time.time()
-
         for e in pg.event.get():
             if e.type == pg.KEYDOWN and e.key == pg.K_LEFT:
                 left = True
             if e.type == pg.KEYDOWN and e.key == pg.K_RIGHT:
                 right = True
-
             if e.type == pg.KEYUP and e.key == pg.K_RIGHT:
                 right = False
             if e.type == pg.KEYUP and e.key == pg.K_LEFT:
                 left = False
-
             if e.type == pg.KEYDOWN and e.key == pg.K_UP:
                 up = True
             if e.type == pg.KEYDOWN and e.key == pg.K_DOWN:
                 down = True
-
             if e.type == pg.KEYUP and e.key == pg.K_UP:
                 up = False
             if e.type == pg.KEYUP and e.key == pg.K_DOWN:
                 down = False
-
             if e.type == pg.QUIT:
                 raise SystemExit("QUIT")
 
@@ -125,17 +121,14 @@ def level2_loop(screen, bg):
             right1 = True
         else:
             right1 = False
-
         if btn4.checkMePressed(hero) == 1:
             up1 = True
         else:
             up1 = False
-
         if btn5.checkMePressed(hero) == 1:
             down1 = True
         else:
             down1 = False
-
         if btn1.state == 1:
             hero1.update(left1, right1, up1, down1, screen, blocks)
 

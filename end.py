@@ -2,8 +2,10 @@ from classes.background import *
 from classes.buttons import *
 
 BackGroundE = Background('images/bg/bg_end.png', [0, 0])
-ebtn1 = Button(['images/buttone/be_m_0.png', 'images/buttone/be_m_1.png', 'images/buttone/be_m_2.png'], 500, 430, 0)  # кнопка для возвращения в меню
-ebtn2 = Button(['images/buttone/be_ex_0.png', 'images/buttone/be_ex_1.png', 'images/buttone/be_ex_2.png'], 500, 520, 0)  # кнопка выхода из игры
+ebtn1 = Button(['images/buttone/be_m_0.png', 'images/buttone/be_m_1.png',
+                'images/buttone/be_m_2.png'], 500, 430, 0)  # кнопка для возвращения в меню
+ebtn2 = Button(['images/buttone/be_ex_0.png', 'images/buttone/be_ex_1.png',
+                'images/buttone/be_ex_2.png'], 500, 520, 0)  # кнопка выхода из игры
 
 
 def end(screen, bg):
@@ -21,20 +23,15 @@ def end(screen, bg):
     pg.mixer.music.play(-1, 0)
 
     while not finished:
-
         screen.blit(bg, (0, 0))
-
         for e in pg.event.get():
             if e.type == pg.QUIT:
                 raise SystemExit("QUIT")
-
         ebtn1.press()
         ebtn2.press()
-
         if ebtn1.state == 1:
             finished = True
             ebtn1.state = 0
-
         if ebtn2.state == 1:
             raise SystemExit("QUIT")
 

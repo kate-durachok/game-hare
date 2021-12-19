@@ -18,15 +18,12 @@ def win(screen, bg):
     pg.mixer.music.play(-1, 0)
 
     while not finished:
-
         screen.blit(bg, (0, 0))
-
         for e in pg.event.get():
             if e.type == pg.KEYDOWN and e.key == pg.K_SPACE:  # при нажатии на пробел переходим к финальным титрам
                 finished = True
             if e.type == pg.QUIT:
                 raise SystemExit("QUIT")
-
         pg.display.update()
 
     pg.mixer.music.stop()

@@ -3,7 +3,8 @@ import time
 
 
 def level3_loop(screen, bg):
-    BackGroundL3, hero, hero1, hero2, hero3, btn1, btn2, btn3, btn4, btn5, btn11, btn12, btn13, btn14, btn15, btn21, btn22, btn23, btn24, btn25, btn31, FPS = pressetl3()
+    BackGroundL3, hero, hero1, hero2, hero3, btn1, btn2, btn3, btn4, btn5, btn11, btn12, \
+    btn13, btn14, btn15, btn21, btn22, btn23, btn24, btn25, btn31, FPS = pressetl3()
 
     bg.blit(BackGroundL3.image, BackGroundL3.rect)
     left = right = up = down = False
@@ -16,28 +17,23 @@ def level3_loop(screen, bg):
 
     while not finished:
         t = time.time()
-
         for e in pg.event.get():
             if e.type == pg.KEYDOWN and e.key == pg.K_LEFT:
                 left = True
             if e.type == pg.KEYDOWN and e.key == pg.K_RIGHT:
                 right = True
-
             if e.type == pg.KEYUP and e.key == pg.K_RIGHT:
                 right = False
             if e.type == pg.KEYUP and e.key == pg.K_LEFT:
                 left = False
-
             if e.type == pg.KEYDOWN and e.key == pg.K_UP:
                 up = True
             if e.type == pg.KEYDOWN and e.key == pg.K_DOWN:
                 down = True
-
             if e.type == pg.KEYUP and e.key == pg.K_UP:
                 up = False
             if e.type == pg.KEYUP and e.key == pg.K_DOWN:
                 down = False
-
             if e.type == pg.QUIT:
                 raise SystemExit("QUIT")
             if e.type == pg.KEYDOWN and e.key == pg.K_RALT:
@@ -70,6 +66,7 @@ def level3_loop(screen, bg):
             right1 = True
         else:
             right1 = False
+
         if btn4.checkMePressed(hero) == 1:
             up1 = True
         else:
@@ -90,7 +87,6 @@ def level3_loop(screen, bg):
             btn13.draw(screen)
             btn14.draw(screen)
             btn15.draw(screen)
-
             btn21.draw(screen)
             hero2.draw(screen)
 
@@ -155,6 +151,7 @@ def level3_loop(screen, bg):
             right3 = True
         else:
             right3 = False
+
         if btn24.checkMePressed(hero2) == 1:
             up3 = True
         else:

@@ -3,7 +3,8 @@ import time
 
 
 def level1_loop(screen, bg):
-    BackGroundL1, hero, hero1, hero2, btn1, btn2, btn3, btn4, btn5, btn11, btn12, btn13, btn14, btn15, btn22, FPS = pressetl1()
+    BackGroundL1, hero, hero1, hero2, btn1, btn2, btn3, btn4, btn5, btn11, btn12, \
+    btn13, btn14, btn15, btn22, FPS = pressetl1()
     bg.blit(BackGroundL1.image, BackGroundL1.rect)
     left = right = up = down = False
     finished = False
