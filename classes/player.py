@@ -260,7 +260,7 @@ class Player(pg.sprite.Sprite):
         self.rect.y += self.vy
         self.collide(0, self.vy, blocks)  # сквозь блоки не проходим
 
-        if self.rect.x + self.rect.width >= self.borders[1]: # за границы не заходим
+        if self.rect.x + self.rect.width >= self.borders[1]:  # за границы не заходим
             self.rect.x = self.borders[1] - self.rect.width
 
         if self.rect.x <= self.borders[0]:
