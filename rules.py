@@ -4,6 +4,11 @@ BackGroundR = Background('images/bg/bg_rules.png', [0, 0])
 
 
 def rules(screen, bg):
+    """
+    показывпет при открытии 1 уровня правила игры
+    :param screen: screen
+    :param bg: картинка png
+    """
     bg.blit(BackGroundR.image, BackGroundR.rect)
     finished = False
 
@@ -17,7 +22,7 @@ def rules(screen, bg):
         screen.blit(bg, (0, 0))
 
         for e in pg.event.get():
-            if e.type == pg.KEYDOWN and e.key == pg.K_SPACE:
+            if e.type == pg.KEYDOWN and e.key == pg.K_SPACE:  # при нажатии на пробел, переходим к содержанию уровня
                 finished = True
             if e.type == pg.QUIT:
                 raise SystemExit("QUIT")

@@ -137,7 +137,7 @@ def level2_loop(screen, bg):
             down1 = False
 
         if btn1.state == 1:
-            hero1.update(left1, right1, up1, down1, screen, platforms)
+            hero1.update(left1, right1, up1, down1, screen, blocks)
 
         btn11.checkMePressed(hero1)
 
@@ -180,7 +180,7 @@ def level2_loop(screen, bg):
             down2 = False
 
         if btn11.state == 1:
-            hero2.update(left2, right2, up2, down2, screen, platforms)
+            hero2.update(left2, right2, up2, down2, screen, blocks)
 
         btn22.checkMePressed(hero2)
 
