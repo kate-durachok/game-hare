@@ -1,9 +1,9 @@
 from presset_l2 import *
 from classes.blocks import *
-
+import time
 
 def level2_loop(screen, bg):
-    BackGroundL2, hero, hero1, hero2, btn1, btn2, btn3, btn4, btn5, btn11, btn12, btn13, btn14, btn15, btn22, WIN_WIDTH, WIN_HEIGHT = pressetl2()
+    BackGroundL2, hero, hero1, hero2, btn1, btn2, btn3, btn4, btn5, btn11, btn12, btn13, btn14, btn15, btn22, WIN_WIDTH, WIN_HEIGHT, FPS = pressetl2()
     entities = pg.sprite.Group()  # Все объекты
     blocks = []  # то, во что мы будем врезаться или опираться
 
@@ -69,6 +69,7 @@ def level2_loop(screen, bg):
     pg.mixer.music.play(-1, 0)
 
     while not finished:
+        t = time.time()
 
         for e in pg.event.get():
             if e.type == pg.KEYDOWN and e.key == pg.K_LEFT:
@@ -193,5 +194,10 @@ def level2_loop(screen, bg):
             screen.blit(e.image, e.rect.move(state.topleft))
 
         pg.display.update()
+
+        dt = 1.0 / FPS - (time.time() - t)
+        if dt < 0:
+            dt = 0
+        time.sleep(dt)
 
     pg.mixer.music.stop()

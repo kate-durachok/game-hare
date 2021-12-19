@@ -6,7 +6,7 @@ def pressetl1():
     WIN_WIDTH = 800
     WIN_HEIGHT = 900
     DISPLAY = (WIN_WIDTH, WIN_HEIGHT)
-
+    FPS = 60
 
 
     BACKGROUND_COLOR = "#90EE90"
@@ -33,4 +33,4 @@ def pressetl1():
 
     btn22 = Button(['images/buttonc/bc200.png', 'images/buttonc/bc201.png'], 290, 20, 0)
 
-    return BackGroundL1, hero, hero1, hero2, btn1, btn2, btn3, btn4, btn5, btn11, btn12, btn13, btn14, btn15, btn22
+    return BackGroundL1, hero, hero1, hero2, btn1, btn2, btn3, btn4, btn5, btn11, btn12, btn13, btn14, btn15, btn22, FPS

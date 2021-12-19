@@ -10,6 +10,7 @@ def pressetl3():
     WIN_WIDTH = 800
     WIN_HEIGHT = 900
     DISPLAY = (WIN_WIDTH, WIN_HEIGHT)
+    FPS = 60
 
 
 
@@ -45,5 +46,5 @@ def pressetl3():
 
     btn31 = Button(['images/buttonc/bc200.png', 'images/buttonc/bc201.png'], 260, 10, 0)  # конец уровня
 
-    return BackGroundL3, hero, hero1, hero2, hero3, btn1, btn2, btn3, btn4, btn5, btn11, btn12, btn13, btn14, btn15, btn21, btn22, btn23, btn24, btn25, btn31
+    return BackGroundL3, hero, hero1, hero2, hero3, btn1, btn2, btn3, btn4, btn5, btn11, btn12, btn13, btn14, btn15, btn21, btn22, btn23, btn24, btn25, btn31, FPS
 

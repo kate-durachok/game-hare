@@ -1,8 +1,8 @@
 from presset_l3 import *
-
+import time
 
 def level3_loop(screen, bg):
-    BackGroundL3, hero, hero1, hero2, hero3, btn1, btn2, btn3, btn4, btn5, btn11, btn12, btn13, btn14, btn15, btn21, btn22, btn23, btn24, btn25, btn31 = pressetl3()
+    BackGroundL3, hero, hero1, hero2, hero3, btn1, btn2, btn3, btn4, btn5, btn11, btn12, btn13, btn14, btn15, btn21, btn22, btn23, btn24, btn25, btn31, FPS = pressetl3()
 
     bg.blit(BackGroundL3.image, BackGroundL3.rect)
     left = right = up = down = False
@@ -15,6 +15,7 @@ def level3_loop(screen, bg):
 
 
     while not finished:
+        t = time.time()
 
         for e in pg.event.get():
             if e.type == pg.KEYDOWN and e.key == pg.K_LEFT:
@@ -175,5 +176,10 @@ def level3_loop(screen, bg):
         hero.draw(screen)
 
         pg.display.update()
+
+        dt = 1.0 / FPS - (time.time() - t)
+        if dt < 0:
+            dt = 0
+        time.sleep(dt)
 
     pg.mixer.music.stop()
