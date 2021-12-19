@@ -4,7 +4,7 @@ from blocks import *
 
 def level2_loop(screen, bg):
     BackGroundL2, hero, hero1, hero2, btn1, btn2, btn3, btn4, btn5, btn11, btn12, btn13, btn14, btn15, btn22, WIN_WIDTH, WIN_HEIGHT = pressetl2()
-    entities = pygame.sprite.Group()  # Все объекты
+    entities = pg.sprite.Group()  # Все объекты
     platforms = []  # то, во что мы будем врезаться или опираться
 
     entities.add(hero)
@@ -63,14 +63,14 @@ def level2_loop(screen, bg):
     left = right = up = down = False
     finished = False
 
-    pygame.mixer.init()
-    pygame.mixer.music.load('music/level_2.mp3')
-    pygame.mixer.music.set_volume(0.05)
-    pygame.mixer.music.play(-1, 0)
+    pg.mixer.init()
+    pg.mixer.music.load('music/level_2.mp3')
+    pg.mixer.music.set_volume(0.05)
+    pg.mixer.music.play(-1, 0)
 
     while not finished:
 
-        for e in pygame.event.get():
+        for e in pg.event.get():
             if e.type == KEYDOWN and e.key == K_LEFT:
                 left = True
             if e.type == KEYDOWN and e.key == K_RIGHT:
@@ -121,7 +121,6 @@ def level2_loop(screen, bg):
             left1 = True
         else:
             left1 = False
-
         if btn3.checkMePressed(hero) == 1:
             right1 = True
         else:
@@ -191,8 +190,8 @@ def level2_loop(screen, bg):
         hero.draw(screen)
         for e in entities:
             state = Rect(0, 0, WIN_WIDTH, WIN_HEIGHT)
-            screen.blit(e.image,  e.rect.move(state.topleft))
+            screen.blit(e.image, e.rect.move(state.topleft))
 
-        pygame.display.update()
+        pg.display.update()
 
-    pygame.mixer.music.stop()
+    pg.mixer.music.stop()
