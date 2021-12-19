@@ -6,6 +6,7 @@ from rules import *
 from win import *
 from lcomplite import *
 from end import *
+import pygame as pg
 
 
 def menu_loop(screen, bg):
@@ -13,16 +14,16 @@ def menu_loop(screen, bg):
     bg.blit(BackGroundM.image, BackGroundM.rect)
     finished = False
 
-    pygame.mixer.init()
-    pygame.mixer.music.load('music/menu_s.mp3')
-    pygame.mixer.music.set_volume(0.05)
-    pygame.mixer.music.play(-1, 0)
+    pg.mixer.init()
+    pg.mixer.music.load('music/menu_s.mp3')
+    pg.mixer.music.set_volume(0.05)
+    pg.mixer.music.play(-1, 0)
 
     while not finished:
 
         screen.blit(bg, (0, 0))
 
-        for e in pygame.event.get():
+        for e in pg.event.get():
             if e.type == KEYDOWN and e.key == K_ESCAPE:
                 finished = True
             if e.type == QUIT:
@@ -39,16 +40,16 @@ def menu_loop(screen, bg):
             levelc(screen, bg)
             mbtn1.state = 0
             bg.blit(BackGroundM.image, BackGroundM.rect)
-            pygame.mixer.music.load('music/menu_s.mp3')
-            pygame.mixer.music.play(-1, 0)
+            pg.mixer.music.load('music/menu_s.mp3')
+            pg.mixer.music.play(-1, 0)
 
         if mbtn2.state == 1:
             level2_loop(screen, bg)
             levelc(screen, bg)
             mbtn2.state = 0
             bg.blit(BackGroundM.image, BackGroundM.rect)
-            pygame.mixer.music.load('music/menu_s.mp3')
-            pygame.mixer.music.play(-1, 0)
+            pg.mixer.music.load('music/menu_s.mp3')
+            pg.mixer.music.play(-1, 0)
 
         if mbtn3.state == 1:
             level3_loop(screen, bg)
@@ -56,8 +57,8 @@ def menu_loop(screen, bg):
             end(screen, bg)
             mbtn3.state = 0
             bg.blit(BackGroundM.image, BackGroundM.rect)
-            pygame.mixer.music.load('music/menu_s.mp3')
-            pygame.mixer.music.play(-1, 0)
+            pg.mixer.music.load('music/menu_s.mp3')
+            pg.mixer.music.play(-1, 0)
 
         if mbtn4.state == 1:
             raise SystemExit("QUIT")
@@ -67,6 +68,6 @@ def menu_loop(screen, bg):
         mbtn3.draw(screen)
         mbtn4.draw(screen)
 
-        pygame.display.update()
+        pg.display.update()
 
-    pygame.mixer.music.stop()
+    pg.mixer.music.stop()

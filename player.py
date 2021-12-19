@@ -148,20 +148,20 @@ ANIMATION_STAY = [(('hare/l_1/0/hd1.png'), ANIMATION_DELAY),
                   (('hare/l_3/3/hd30.png'), ANIMATION_DELAY)]
 
 
-class Player(sprite.Sprite):
+class Player(pg.sprite.Sprite):
     def __init__(self, x, y, borders, width=80, height=60, speed=3, number=0):
-        sprite.Sprite.__init__(self)
+        pg.sprite.Sprite.__init__(self)
         self.speed = speed
         self.vx = 0
         self.vy = 0
         self.number = number
         self.startX = x  # Начальная позиция Х, пригодится когда будем переигрывать уровень
         self.startY = y
-        self.image = Surface((width, height))
-        self.image.fill(Color(COLOR))
-        self.rect = Rect(x, y, width, height)  # прямоугольный объект
+        self.image = pg.Surface((width, height))
+        self.image.fill(pg.Color(COLOR))
+        self.rect = pg.Rect(x, y, width, height)  # прямоугольный объект
         self.borders = borders
-        self.image.set_colorkey(Color(COLOR))  # делаем фон прозрачным
+        self.image.set_colorkey(pg.Color(COLOR))  # делаем фон прозрачным
         #        Анимация движения вправо
         boltAnim = []
         for anim in ANIMATION_RIGHT[self.number]:
@@ -200,28 +200,28 @@ class Player(sprite.Sprite):
 
         if left:
             self.vx = -self.speed
-            self.image.fill(Color(COLOR))
+            self.image.fill(pg.Color(COLOR))
             self.boltAnimLeft.blit(self.image, (0, 0))
             self.boltAnimStay = pyganim.PygAnimation([(ANIMATION_LEFT[self.number][0], ANIMATION_DELAY)])
             self.boltAnimStay.play()
 
         if right:
             self.vx = self.speed
-            self.image.fill(Color(COLOR))
+            self.image.fill(pg.Color(COLOR))
             self.boltAnimRight.blit(self.image, (0, 0))
             self.boltAnimStay = pyganim.PygAnimation([(ANIMATION_RIGHT[self.number][0], ANIMATION_DELAY)])
             self.boltAnimStay.play()
 
         if up:
             self.vy = -self.speed
-            self.image.fill(Color(COLOR))
+            self.image.fill(pg.Color(COLOR))
             self.boltAnimUp.blit(self.image, (0, 0))
             self.boltAnimStay = pyganim.PygAnimation([(ANIMATION_UP[self.number][0], ANIMATION_DELAY)])
             self.boltAnimStay.play()
 
         if down:
             self.vy = self.speed
-            self.image.fill(Color(COLOR))
+            self.image.fill(pg.Color(COLOR))
             self.boltAnimDown.blit(self.image, (0, 0))
             self.boltAnimStay = pyganim.PygAnimation([(ANIMATION_DOWN[self.number][0], ANIMATION_DELAY)])
             self.boltAnimStay.play()
@@ -229,7 +229,7 @@ class Player(sprite.Sprite):
         if not (up or down or left or right):
             self.vy = 0
             self.vx = 0
-            self.image.fill(Color(COLOR))
+            self.image.fill(pg.Color(COLOR))
             self.boltAnimStay.blit(self.image, (0, 0))
 
         self.rect.x += self.vx
@@ -251,7 +251,7 @@ class Player(sprite.Sprite):
 
     def collide(self, xv, yv, platforms):
         for p in platforms:
-            if sprite.collide_rect(self, p):  # если есть пересечение платформы с игроком
+            if pg.sprite.collide_rect(self, p):  # если есть пересечение платформы с игроком
 
                 if xv > 0:  # если движется вправо
                     self.rect.right = p.rect.left  # то не движется вправо

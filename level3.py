@@ -8,16 +8,15 @@ def level3_loop(screen, bg):
     left = right = up = down = False
     finished = False
 
-    pygame.mixer.init()
-    pygame.mixer.music.load('music/level_3.mp3')
-    pygame.mixer.music.set_volume(0.05)
-    pygame.mixer.music.play(-1, 0)
-
+    pg.mixer.init()
+    pg.mixer.music.load('music/level_3.mp3')
+    pg.mixer.music.set_volume(0.05)
+    pg.mixer.music.play(-1, 0)
 
 
     while not finished:
 
-        for e in pygame.event.get():
+        for e in pg.event.get():
             if e.type == KEYDOWN and e.key == K_LEFT:
                 left = True
             if e.type == KEYDOWN and e.key == K_RIGHT:
@@ -176,6 +175,6 @@ def level3_loop(screen, bg):
 
         hero.draw(screen)
 
-        pygame.display.update()
+        pg.display.update()
 
-    pygame.mixer.music.stop()
+    pg.mixer.music.stop()

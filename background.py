@@ -1,8 +1,12 @@
-import pygame
+import pygame as pg
 
-class Background(pygame.sprite.Sprite):
+
+class Background(pg.sprite.Sprite):
+    """
+    класс бля удобной работы с фоном и получения его параметров
+    """
     def __init__(self, image_file, location):
-        pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load(image_file)
+        pg.sprite.Sprite.__init__(self)
+        self.image = pg.image.load(image_file)
         self.rect = self.image.get_rect()
         self.rect.left, self.rect.top = location

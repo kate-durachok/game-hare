@@ -1,4 +1,4 @@
-from pygame import *
+import pygame as pg
 from background import *
 from buttons import *
 
@@ -10,16 +10,16 @@ def end(screen, bg):
     bg.blit(BackGroundE.image, BackGroundE.rect)
     finished = False
 
-    pygame.mixer.init()
-    pygame.mixer.music.load('music/end_s.mp3')
-    pygame.mixer.music.set_volume(0.05)
-    pygame.mixer.music.play(-1, 0)
+    pg.mixer.init()
+    pg.mixer.music.load('music/end_s.mp3')
+    pg.mixer.music.set_volume(0.05)
+    pg.mixer.music.play(-1, 0)
 
     while not finished:
 
         screen.blit(bg, (0, 0))
 
-        for e in pygame.event.get():
+        for e in pg.event.get():
             if e.type == QUIT:
                 raise SystemExit("QUIT")
 
@@ -36,6 +36,6 @@ def end(screen, bg):
         ebtn1.draw(screen)
         ebtn2.draw(screen)
 
-        pygame.display.update()
+        pg.display.update()
 
-    pygame.mixer.music.stop()
+    pg.mixer.music.stop()

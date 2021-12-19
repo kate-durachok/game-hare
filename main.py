@@ -1,11 +1,12 @@
 from menu import *
+import pygame as pg
 
 
 
 def main():
-    pygame.init()
-    screen = pygame.display.set_mode(DISPLAY)
-    pygame.display.set_caption("Hare")
+    pg.init()
+    screen = pg.display.set_mode(DISPLAY)
+    pg.display.set_caption("Hare")
 
     bg = Surface((WIN_WIDTH, WIN_HEIGHT))
 
