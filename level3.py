@@ -154,7 +154,6 @@ def level3_loop(screen, bg):
             right3 = True
         else:
             right3 = False
-
         if btn24.checkMePressed(hero2) == 1:
             up3 = True
         else:

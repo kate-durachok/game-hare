@@ -121,7 +121,6 @@ def level2_loop(screen, bg):
             left1 = True
         else:
             left1 = False
-
         if btn3.checkMePressed(hero) == 1:
             right1 = True
         else:
@@ -191,7 +190,7 @@ def level2_loop(screen, bg):
         hero.draw(screen)
         for e in entities:
             state = Rect(0, 0, WIN_WIDTH, WIN_HEIGHT)
-            screen.blit(e.image,  e.rect.move(state.topleft))
+            screen.blit(e.image, e.rect.move(state.topleft))
 
         pg.display.update()
 
