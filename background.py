@@ -3,7 +3,7 @@ import pygame as pg
 
 class Background(pg.sprite.Sprite):
     """
-    класс lля удобной работы с фоном и получения его параметров
+    класс для удобной работы с фоном и получения его параметров
     """
     def init(self, image_file, location):
         pg.sprite.Sprite.init(self)
