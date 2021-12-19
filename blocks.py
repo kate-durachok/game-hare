@@ -4,7 +4,8 @@ from random import randint
 PLATFORM_WIDTH = 25
 PLATFORM_HEIGHT = 25
 PLATFORM_COLOR = "#FF6262"
-BLOCKS = [('blocks/block0.png'), ('blocks/block1.png'), ('blocks/block2.png'), ('blocks/block3.png'), ('blocks/block4.png'), ('blocks/block5.png')]
+BLOCKS = [('images/blocks/block0.png'), ('images/blocks/block1.png'), ('images/blocks/block2.png'), ('images/blocks/block3.png'),
+          ('images/blocks/block4.png'), ('images/blocks/block5.png')]
  
 class Platform(pg.sprite.Sprite):
     def __init__(self, x, y):

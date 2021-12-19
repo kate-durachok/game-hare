@@ -7,7 +7,7 @@ DISPLAY = (WIN_WIDTH, WIN_HEIGHT)
 
 
 BACKGROUND_COLOR = "#90EE90"
-BackGroundM = Background('bg/bg_menu.png', [0, 0])
+BackGroundM = Background('images/bg/bg_menu.png', [0, 0])
 
 
 mbtn1 = Button(['images/buttonm/bm_l1_0.png', 'images/buttonm/bm_l1_1.png', 'images/buttonm/bm_l1_2.png'], 60, 240, 0)

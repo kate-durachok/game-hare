@@ -1,7 +1,7 @@
 from background import *
 from buttons import *
 
-BackGroundE = Background('bg/bg_end.png', [0, 0])
+BackGroundE = Background('images/bg/bg_end.png', [0, 0])
 ebtn1 = Button(['images/buttone/be_m_0.png', 'images/buttone/be_m_1.png', 'images/buttone/be_m_2.png'], 500, 430, 0)
 ebtn2 = Button(['images/buttone/be_ex_0.png', 'images/buttone/be_ex_1.png', 'images/buttone/be_ex_2.png'], 500, 520, 0)
 

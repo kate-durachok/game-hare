@@ -1,6 +1,6 @@
 from background import *
 
-BackGroundLC = Background('bg/bg_lc.png', [0, 0])
+BackGroundLC = Background('images/bg/bg_lc.png', [0, 0])
 
 def levelc(screen, bg):
     bg.blit(BackGroundLC.image, BackGroundLC.rect)

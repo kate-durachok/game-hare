@@ -1,6 +1,6 @@
 from background import *
 
-BackGroundW = Background('bg/bg_win.png', [0, 0])
+BackGroundW = Background('images/bg/bg_win.png', [0, 0])
 
 def win(screen, bg):
     bg.blit(BackGroundW.image, BackGroundW.rect)

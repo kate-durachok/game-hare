@@ -1,7 +1,7 @@
 import pygame as pg
 from background import *
 
-BackGroundR = Background('bg/bg_rules.png', [0, 0])
+BackGroundR = Background('images/bg/bg_rules.png', [0, 0])
 
 
 def rules(screen, bg):

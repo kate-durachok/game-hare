@@ -10,7 +10,7 @@ def pressetl3():
 
 
     BACKGROUND_COLOR = "#90EE90"
-    BackGroundL3 = Background('bg/bg_l3.png', [0, 0])
+    BackGroundL3 = Background('images/bg/bg_l3.png', [0, 0])
 
 
     hero = Player(800, 900, [0, WIN_WIDTH, 600, WIN_HEIGHT], 80, 60, 3, 6)  # создаем героя по (x,y) координатам
