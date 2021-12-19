@@ -24,9 +24,9 @@ def menu_loop(screen, bg):
         screen.blit(bg, (0, 0))
 
         for e in pg.event.get():
-            if e.type == KEYDOWN and e.key == K_ESCAPE:
+            if e.type == pg.KEYDOWN and e.key == pg.K_ESCAPE:
                 finished = True
-            if e.type == QUIT:
+            if e.type == pg.QUIT:
                 raise SystemExit("QUIT")
 
         mbtn1.press()

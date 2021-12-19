@@ -7,8 +7,7 @@ def main():
     pg.init()
     screen = pg.display.set_mode(DISPLAY)
     pg.display.set_caption("Hare")
-
-    bg = Surface((WIN_WIDTH, WIN_HEIGHT))
+    bg = pg.Surface((WIN_WIDTH, WIN_HEIGHT))
 
     menu_loop(screen, bg)
     

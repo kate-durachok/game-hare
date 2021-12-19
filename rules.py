@@ -3,6 +3,7 @@ from background import *
 
 BackGroundR = Background('bg/bg_rules.png', [0, 0])
 
+
 def rules(screen, bg):
     bg.blit(BackGroundR.image, BackGroundR.rect)
     finished = False

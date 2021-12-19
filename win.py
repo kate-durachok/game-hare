@@ -1,4 +1,3 @@
-import pygame as pg
 from background import *
 
 BackGroundW = Background('bg/bg_win.png', [0, 0])

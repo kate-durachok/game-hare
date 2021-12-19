@@ -1,4 +1,3 @@
-import pygame as pg
 from background import *
 from buttons import *
 
@@ -20,7 +19,7 @@ def end(screen, bg):
         screen.blit(bg, (0, 0))
 
         for e in pg.event.get():
-            if e.type == QUIT:
+            if e.type == pg.QUIT:
                 raise SystemExit("QUIT")
 
         ebtn1.press()

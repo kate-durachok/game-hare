@@ -1,11 +1,9 @@
 import pygame as pg
-import os
 from random import randint
 
 PLATFORM_WIDTH = 25
 PLATFORM_HEIGHT = 25
 PLATFORM_COLOR = "#FF6262"
-ICON_DIR = os.path.dirname(__file__) #  Полный путь к каталогу с файлами
 BLOCKS = [('blocks/block0.png'), ('blocks/block1.png'), ('blocks/block2.png'), ('blocks/block3.png'), ('blocks/block4.png'), ('blocks/block5.png')]
  
 class Platform(pg.sprite.Sprite):

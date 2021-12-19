@@ -17,29 +17,29 @@ def level3_loop(screen, bg):
     while not finished:
 
         for e in pg.event.get():
-            if e.type == KEYDOWN and e.key == K_LEFT:
+            if e.type == pg.KEYDOWN and e.key == pg.K_LEFT:
                 left = True
-            if e.type == KEYDOWN and e.key == K_RIGHT:
+            if e.type == pg.KEYDOWN and e.key == pg.K_RIGHT:
                 right = True
 
-            if e.type == KEYUP and e.key == K_RIGHT:
+            if e.type == pg.KEYUP and e.key == pg.K_RIGHT:
                 right = False
-            if e.type == KEYUP and e.key == K_LEFT:
+            if e.type == pg.KEYUP and e.key == pg.K_LEFT:
                 left = False
 
-            if e.type == KEYDOWN and e.key == K_UP:
+            if e.type == pg.KEYDOWN and e.key == pg.K_UP:
                 up = True
-            if e.type == KEYDOWN and e.key == K_DOWN:
+            if e.type == pg.KEYDOWN and e.key == pg.K_DOWN:
                 down = True
 
-            if e.type == KEYUP and e.key == K_UP:
+            if e.type == pg.KEYUP and e.key == pg.K_UP:
                 up = False
-            if e.type == KEYUP and e.key == K_DOWN:
+            if e.type == pg.KEYUP and e.key == pg.K_DOWN:
                 down = False
 
-            if e.type == QUIT:
+            if e.type == pg.QUIT:
                 raise SystemExit("QUIT")
-            if e.type == KEYDOWN and e.key == K_RALT:
+            if e.type == pg.KEYDOWN and e.key == pg.K_RALT:
                 finished = True
 
         screen.blit(bg, (0, 0))
