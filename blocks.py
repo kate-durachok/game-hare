@@ -12,7 +12,7 @@ BLOCKS = [('blocks/block0.png'), ('blocks/block1.png'), ('blocks/block2.png'), (
 
 class Platform(pg.sprite.Sprite):
     def init(self, x, y):
-        pg.Sprite.init(self)
+        pg.sprite.Sprite.init(self)
         self.image = pg.Surface((PLATFORM_WIDTH, PLATFORM_HEIGHT))
         self.image.fill(pg.Color(PLATFORM_COLOR))
         self.image = pg.image.load(BLOCKS[randint(0, 5)])
